@@ -1,0 +1,62 @@
+.carousel-slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-slide-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .carousel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Make the image container relative so the title can be positioned inside */
+  .carousel-image-column {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Style the image */
+  .carousel-image-column img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Position the title absolutely over the image */
+  .carousel-text-column {
+    position: absolute;
+    top: 400px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: for contrast */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    width: auto;
+  }
+  
+  .carousel-prev-button,
+  .carousel-next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+  }
+  
