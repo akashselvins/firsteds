@@ -46,3 +46,27 @@
 }
 
 
+/* Style the link in the last row as a red button */
+.custom-layout .row:last-child a {
+  all: unset;
+  display: inline-block !important;
+  background-color: red !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  text-decoration: none !important;
+  border-radius: 5px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  transition: background-color 0.3s ease !important;
+  font-family: "Karma", sans-serif !important;
+}
+
+.custom-layout .row:last-child a:hover {
+  background-color: darkred !important;
+}
+
+
+
+  
+

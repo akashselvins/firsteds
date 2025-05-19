@@ -1,29 +1,38 @@
 export default function decorate(block) {
     [...block.children].forEach((row) => {
-      const textDiv = row.querySelector('h1');
-      const imageContainer = row.querySelector('picture');
+      const columns = [...row.children];
+      if (columns.length < 2) return; // Ensure there are at least two columns
   
-      // Wrap the image and text in a relative container
+      const textColumn = columns[0];
+      const imageColumn = columns[1];
+  
+      // Find the first text element (h1, h2, p, etc.) in the text column
+      const textElement = textColumn.querySelector('h1, h2, h3, h4, h5, h6, p');
+      const imageContainer = imageColumn.querySelector('picture');
+  
+      if (!textElement || !imageContainer) return;
+  
+      // Create a wrapper to hold both image and text
       const wrapper = document.createElement('div');
       wrapper.style.position = 'relative';
       wrapper.style.display = 'inline-block';
       wrapper.style.width = '100%';
   
       // Style the text to overlay the image
-      textDiv.style.position = 'absolute';
-      textDiv.style.top = '10%';
-      textDiv.style.left = '10%';
-      textDiv.style.color = 'white';
-      textDiv.style.fontSize = '2em';
-      textDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-      textDiv.style.padding = '10px';
-      textDiv.style.borderRadius = '5px';
-      textDiv.style.zIndex = '2';
-      textDiv.style.margin = '0';
+      textElement.style.position = 'absolute';
+      textElement.style.top = '10%';
+      textElement.style.left = '10%';
+      textElement.style.color = 'white';
+      textElement.style.fontSize = '2em';
+      textElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      textElement.style.padding = '10px';
+      textElement.style.borderRadius = '5px';
+      textElement.style.zIndex = '2';
+      textElement.style.margin = '0';
   
       // Move image and text into the wrapper
       wrapper.appendChild(imageContainer);
-      wrapper.appendChild(textDiv);
+      wrapper.appendChild(textElement);
   
       // Clear the row and append the wrapper
       row.innerHTML = '';
