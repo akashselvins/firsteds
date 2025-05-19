@@ -1,37 +1,33 @@
-export default function decorate(block){
-    [...block.children].forEach((row)=>{
-        const container=document.createElement('div');
-        container.className='ela-row-ithu-child';
-
-        const columns=row.querySelectorAll(':scope > div');
-
-        columns.forEach((col,index) => {
-            if(index===0){
-                const image=col.querySelector('img');
-               const imageclass= document.createElement('div');
-               imageclass.className='first-col-div-created';
-               const text=col.querySelector('h1');
-                const textclass=document.createElement('div');
-                textclass.className='second-col-div-created';
-
-                if(image) imageclass.appendChild(image);
-                if(text) imageclass.appendChild(text);
-                container.appendChild(textclass);
-                container.appendChild(imageclass);
-
-            }
-            else{
-                const image=col.querySelector('img');
-               const imageclass= document.createElement('div');
-               imageclass.className='first-col-div-created';
-               if (image) imageclass.appendChild(image);
-               container.appendChild(imageclass);
-            }
-        });
-
-        row.innerHTML = '';
-        row.appendChild(container);
-
-
+export default function decorate(block) {
+    [...block.children].forEach((row) => {
+      const textDiv = row.querySelector('h1');
+      const imageContainer = row.querySelector('picture');
+  
+      // Wrap the image and text in a relative container
+      const wrapper = document.createElement('div');
+      wrapper.style.position = 'relative';
+      wrapper.style.display = 'inline-block';
+      wrapper.style.width = '100%';
+  
+      // Style the text to overlay the image
+      textDiv.style.position = 'absolute';
+      textDiv.style.top = '10%';
+      textDiv.style.left = '10%';
+      textDiv.style.color = 'white';
+      textDiv.style.fontSize = '2em';
+      textDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      textDiv.style.padding = '10px';
+      textDiv.style.borderRadius = '5px';
+      textDiv.style.zIndex = '2';
+      textDiv.style.margin = '0';
+  
+      // Move image and text into the wrapper
+      wrapper.appendChild(imageContainer);
+      wrapper.appendChild(textDiv);
+  
+      // Clear the row and append the wrapper
+      row.innerHTML = '';
+      row.appendChild(wrapper);
     });
-}
+  }
+  
