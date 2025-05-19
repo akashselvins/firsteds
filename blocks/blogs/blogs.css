@@ -50,6 +50,8 @@ body, h1, h2, h3, h4, h5, h6, p, span, div {
     object-fit: cover;
   }
   
+
+  
   /* Ensure image + text stay aligned and text wraps properly */
   .blogs-wrapper .row-container:nth-child(2) p > div {
     display: flex;
@@ -74,4 +76,18 @@ body, h1, h2, h3, h4, h5, h6, p, span, div {
     margin: 5px;
     background-color: #f0f0f0;
   }
+  .blogs-wrapper .row-container:nth-child(3) > div:nth-child(2) span:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .blogs-wrapper .row-container:nth-child(2) > div:nth-child(2)::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+  }
+  
   
