@@ -3,21 +3,22 @@
 .photogrid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the entire grid */
+  justify-content: center;
   gap: 9px;
-  padding: 0 20px; /* Optional: adds some padding on sides */
+  padding: 0 20px;
 }
 
 .photo-container {
-  width: calc((100% - 27px) / 4); /* 3 gaps of 9px between 4 items */
+  flex: 1 1 calc((100% - 27px) / 4); /* Default: 4 per row */
   box-sizing: border-box;
+  max-width: calc((100% - 27px) / 4);
 }
 
 .photo-container img {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 2 / 3; /* Optional: keeps consistent image ratio */
+  aspect-ratio: 2 / 3;
 }
 
 .photo-container h3 {
@@ -26,10 +27,31 @@
 }
 
 .photo-container p {
-  display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   unicode-bidi: isolate;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .photo-container {
+    flex: 1 1 calc((100% - 18px) / 3);
+    max-width: calc((100% - 18px) / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-container {
+    flex: 1 1 calc((100% - 9px) / 1);
+    max-width: calc((100% - 9px) / 1);
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }

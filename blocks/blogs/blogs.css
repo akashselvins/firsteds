@@ -89,5 +89,22 @@ body, h1, h2, h3, h4, h5, h6, p, span, div {
     background-color: #ccc;
     margin: 10px 0;
   }
+
+  @media (max-width: 768px) {
+    .blogs-wrapper {
+      flex-direction: column;
+      align-items: stretch; /* Optional: makes children take full width */
+    }
+  
+    .blogs-wrapper .blogs {
+      flex-direction: column;
+    }
+  
+    .blogs-wrapper .row-container {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+  
   
   

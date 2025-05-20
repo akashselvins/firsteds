@@ -47,7 +47,7 @@
 
 
 /* Style the link in the last row as a red button */
-.custom-layout .row:last-child a {
+.row-4 a {
   all: unset;
   display: inline-block !important;
   background-color: red !important;
@@ -62,7 +62,7 @@
   font-family: "Karma", sans-serif !important;
 }
 
-.custom-layout .row:last-child a:hover {
+.row-4 a:hover {
   background-color: darkred !important;
 }
 
