@@ -9,7 +9,7 @@ export default function decorate(block) {
   }
 
   block.classList.add('custom-layout');
-
+  
   const heading = block.querySelector('h3');
   const image = block.querySelector('img');
   const textContainer = block.querySelector('div[data-align="center"]');

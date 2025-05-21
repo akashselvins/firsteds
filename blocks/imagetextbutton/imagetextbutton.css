@@ -1,0 +1,48 @@
+.imagetextbutton {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .imagetextbutton picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .imagetextbutton .text-overlay {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Georgia', serif; /* You can change this to any font you prefer */
+    font-size: 2em;
+    font-weight: 200;
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional: adds contrast */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+  
+  .imagetextbutton .button-overlay {
+  position: absolute;
+  bottom: -25px; /* Adjust this value to control how much overlaps */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ccc; /* Light grey background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.imagetextbutton .button-overlay a {
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
