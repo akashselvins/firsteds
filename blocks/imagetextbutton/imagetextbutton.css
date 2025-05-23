@@ -46,3 +46,7 @@
   text-decoration: none;
   font-weight: bold;
 }
+.imagetextbutton .text-overlay:empty,
+.imagetextbutton .button-overlay:empty {
+  display: none;
+}
