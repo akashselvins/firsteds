@@ -33,10 +33,15 @@ export default function decorate(block) {
   row3.className = 'row row-3';
   if (textContainer) row3.appendChild(textContainer);
 
-  // Fourth row: button
-  const row4 = document.createElement('div');
-  row4.className = 'row row-4';
-  if (button) row4.appendChild(button);
+  const buttons = block.querySelectorAll('a');
+
+// Fourth row: buttons
+const row4 = document.createElement('div');
+row4.className = 'row row-4';
+buttons.forEach(button => {
+  row4.appendChild(button);
+});
+
 
   // Append rows to block
   block.appendChild(row1);
