@@ -1,0 +1,22 @@
+.rightimagetext-block {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family: 'Karma', serif;
+    align-self: flex-end;
+  }
+  
+  .rightimagetext-block h3,
+  .rightimagetext-block h4,
+  .rightimagetext-block h5,
+  .rightimagetext-block p {
+    margin-bottom: 10px;
+  }
+  
+  .rightimagetext-block picture img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+  

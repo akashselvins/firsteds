@@ -257,3 +257,20 @@ main .section.highlight {
 }
 
 
+
+.section-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.section.left-side {
+  flex: 2;
+}
+
+.section.right-side {
+  flex: 1;
+  margin-left: auto;
+}
+
