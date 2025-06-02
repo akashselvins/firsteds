@@ -1,20 +1,20 @@
 {
     "projects": "AKash Edge Deliver Services",
     "plugins": [
-        {
-            "id": "co-pilot",
-            "title": "Co-Pilot",
-            "enviroments": ["edit","dev","preview","live","prod"],
-            "url":"https://copilot.cloud.microsoft/?fromcode=cmc&redirectid=01077CDB8E874A38A0D5637FC9CE90FB&auth=2",
-            "passConfig":true,
-            "passReffer": true,
-            "excludePaths":[
-                "**/blocks/**"
-            ],
-            "includePaths":  [
-                "**"
-            ]
-
-        }
+      {
+        "id": "co-pilot",
+        "title": "Co-Pilot",
+        "environments": ["edit", "dev", "preview", "live", "prod"],
+        "url": "https://copilot.cloud.microsoft/?fromcode=cmc&redirectid=01077CDB8E874A38A0D5637FC9CE90FB&auth=2",
+        "passConfig": true,
+        "passReffer": true,
+        "excludePaths": [
+          "**/blocks/**"
+        ],
+        "includePaths": [
+          "**"
+        ]
+      }
     ]
-}
+  }
+  
