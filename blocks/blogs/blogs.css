@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Karma&display=swap');
 
-body, h1, h2, h3, h4, h5, h6, p, span, div {
+.blogs-wrapper h1,
+.blogs-wrapper h2,
+.blogs-wrapper h3,
+.blogs-wrapper h4,
+.blogs-wrapper h5,
+.blogs-wrapper h6,
+.blogs-wrapper p,
+.blogs-wrapper span,
+.blogs-wrapper div {
     font-family: "Karma", sans-serif;
   }
   

@@ -127,3 +127,41 @@ async function loadPage() {
 }
 
 loadPage();
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const main = document.querySelector('main');
+  const sections = [...main.querySelectorAll('.section')];
+
+  let i = 0;
+  while (i < sections.length) {
+    const current = sections[i];
+    const next = sections[i + 1];
+
+    const isLeft = current.classList.contains('left-side');
+    const nextIsRight = next && next.classList.contains('right-side');
+
+    if (isLeft && nextIsRight) {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('section-row');
+      main.insertBefore(wrapper, current);
+      wrapper.appendChild(current);
+      wrapper.appendChild(next);
+      i += 2;
+    } else if (current.classList.contains('right-side')) {
+      // Standalone right-side block
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('section-standalone-right');
+      main.insertBefore(wrapper, current);
+      wrapper.appendChild(current);
+      i++;
+    } else {
+      i++;
+    }
+  }
+});
+
+
+

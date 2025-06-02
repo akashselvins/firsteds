@@ -1,0 +1,27 @@
+version: 1
+indices:
+  - name: site
+    include:
+      - '**'
+    exclude:
+      - '**/blocks/**'
+    target: /query-index
+    properties:
+      author:
+        selector: head > meta[name="author"]
+        value: attribute(el, 'content')
+      og:title:
+        selector: head > meta[property="og:title"]
+        value: attribute(el, 'content')
+      publicationDate:
+        selector: head > meta[name="publication_date"]
+        value: attribute(el, 'content')
+      firstHeader:
+        selector: h1
+        value: text(el)
+      og:image:
+        selector: head > meta[property="og:image"]
+        value: attribute(el, 'content')
+      description:
+        selector: head > meta[name="description"]
+        value: attribute(el, 'content')
