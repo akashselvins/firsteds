@@ -1,6 +1,7 @@
 version: 1
+
 indices:
-  - name: site
+  firsteds:
     include:
       - '**'
     exclude:
@@ -8,20 +9,20 @@ indices:
     target: /query-index
     properties:
       author:
-        selector: head > meta[name="author"]
+        select: head > meta[name="author"]
         value: attribute(el, 'content')
       og:title:
-        selector: head > meta[property="og:title"]
+        select: head > meta[property="og:title"]
         value: attribute(el, 'content')
       publicationDate:
-        selector: head > meta[name="publication_date"]
+        select: head > meta[name="publication_date"]
         value: attribute(el, 'content')
       firstHeader:
-        selector: h1
+        select: h1
         value: text(el)
       og:image:
-        selector: head > meta[property="og:image"]
+        select: head > meta[property="og:image"]
         value: attribute(el, 'content')
       description:
-        selector: head > meta[name="description"]
+        select: head > meta[name="description"]
         value: attribute(el, 'content')
