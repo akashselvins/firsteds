@@ -14,9 +14,6 @@ indices:
       og:title:
         select: head > meta[property="og:title"]
         value: attribute(el, 'content')
-      firstHeader:
-        select: h1
-        value: text(el)
       og:image:
         select: head > meta[property="og:image"]
         value: attribute(el, 'content')
