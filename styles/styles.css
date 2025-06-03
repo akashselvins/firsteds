@@ -274,3 +274,14 @@ main .section.highlight {
   margin-left: auto;
 }
 
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .section-row {
+    flex-direction: column;
+  }
+
+  .section.right-side {
+    margin-left: 0; /* Remove auto margin to center or align naturally */
+  }
+}
+
