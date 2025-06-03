@@ -12,7 +12,7 @@ export default function decorate(block) {
   
   const heading = block.querySelector('h3');
   const image = block.querySelector('img');
-  const textContainer = block.querySelector('div[data-align="center"]');
+  const textContainer = block.querySelector('p,h1,h2,h3,h4,h5');
   const button = block.querySelector('a');
 
   // Clear original content
