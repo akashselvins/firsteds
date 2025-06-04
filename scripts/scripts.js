@@ -130,38 +130,29 @@ loadPage();
 
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector('main');
   const sections = [...main.querySelectorAll('.section')];
 
-  let i = 0;
-  while (i < sections.length) {
-    const current = sections[i];
-    const next = sections[i + 1];
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('section-row');
 
-    const isLeft = current.classList.contains('left-side');
-    const nextIsRight = next && next.classList.contains('right-side');
+  const leftContainer = document.createElement('div');
+  leftContainer.classList.add('left-container');
 
-    if (isLeft && nextIsRight) {
-      const wrapper = document.createElement('div');
-      wrapper.classList.add('section-row');
-      main.insertBefore(wrapper, current);
-      wrapper.appendChild(current);
-      wrapper.appendChild(next);
-      i += 2;
-    } else if (current.classList.contains('right-side')) {
-      // Standalone right-side block
-      const wrapper = document.createElement('div');
-      wrapper.classList.add('section-standalone-right');
-      main.insertBefore(wrapper, current);
-      wrapper.appendChild(current);
-      i++;
-    } else {
-      i++;
+  const rightContainer = document.createElement('div');
+  rightContainer.classList.add('right-container');
+
+  sections.forEach(section => {
+    if (section.classList.contains('left-side')) {
+      leftContainer.appendChild(section);
+    } else if (section.classList.contains('right-side')) {
+      rightContainer.appendChild(section);
     }
-  }
+  });
+
+  wrapper.appendChild(leftContainer);
+  wrapper.appendChild(rightContainer);
+  main.innerHTML = ''; // Clear existing content
+  main.appendChild(wrapper);
 });
-
-
-

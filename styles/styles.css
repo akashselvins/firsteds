@@ -256,8 +256,6 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-
-
 .section-row {
   display: flex;
   justify-content: space-between;
@@ -265,13 +263,23 @@ main .section.highlight {
   margin-bottom: 2rem;
 }
 
-.section.left-side {
+.left-container {
+  display: flex;
+  flex-direction: column;
   flex: 2;
+  gap: 20px;
 }
 
-.section.right-side {
+.right-container {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  margin-left: auto;
+  gap: 20px;
+}
+
+.section.right-side,
+.section.left-side {
+  margin: 0;
 }
 
 /* Responsive layout for smaller screens */
@@ -280,8 +288,8 @@ main .section.highlight {
     flex-direction: column;
   }
 
-  .section.right-side {
-    margin-left: 0; /* Remove auto margin to center or align naturally */
+  .left-container,
+  .right-container {
+    flex-direction: column;
   }
 }
-
