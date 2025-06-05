@@ -30,7 +30,7 @@ export default function decorate(block) {
         });
   
         if (match) {
-          const baseUrl = 'https://main--firsteds--akashselvins.aem.live';
+          const baseUrl = 'https://main--firsteds--akashselvins.aem.page';
           window.location.href = `${baseUrl}${match.path}`;
         } else {
           alert('No matching page found.');
