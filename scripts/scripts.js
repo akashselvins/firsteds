@@ -129,30 +129,3 @@ async function loadPage() {
 loadPage();
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const main = document.querySelector('main');
-  const sections = [...main.querySelectorAll('.section')];
-
-  const wrapper = document.createElement('div');
-  wrapper.classList.add('section-row');
-
-  const leftContainer = document.createElement('div');
-  leftContainer.classList.add('left-container');
-
-  const rightContainer = document.createElement('div');
-  rightContainer.classList.add('right-container');
-
-  sections.forEach(section => {
-    if (section.classList.contains('left-side')) {
-      leftContainer.appendChild(section);
-    } else if (section.classList.contains('right-side')) {
-      rightContainer.appendChild(section);
-    }
-  });
-
-  wrapper.appendChild(leftContainer);
-  wrapper.appendChild(rightContainer);
-  main.innerHTML = ''; // Clear existing content
-  main.appendChild(wrapper);
-});
