@@ -24,14 +24,14 @@ export default function decorate(block) {
         const pages = json.data;
   
         const match = pages.find(page => {
-            const titleMatch = page['og:title']?.toLowerCase().includes(query);
-            const tagMatch = page.tags?.toLowerCase().includes(query);
-            return titleMatch || tagMatch;
-          });
-          
+          const titleMatch = page['og:title']?.toLowerCase().includes(query);
+          const tagMatch = page.tags?.toLowerCase().includes(query);
+          return titleMatch || tagMatch;
+        });
   
         if (match) {
-          window.location.href = match.path;
+          const baseUrl = 'https://main--firsteds--akashselvins.aem.page';
+          window.location.href = `${baseUrl}${match.path}`;
         } else {
           alert('No matching page found.');
         }
