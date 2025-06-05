@@ -8,9 +8,9 @@ indices:
       - '**/blocks/**'
     target: /query-index
     properties:
-      title:
-        select: head > title
-        value: text(el)
+      og:title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, 'content')
       tag:
         select: head > meta[name="tag"]
         value: attribute(el, 'content')
