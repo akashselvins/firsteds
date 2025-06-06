@@ -1,7 +1,5 @@
 export default function decorate(block) {
-    // Create label
-    const label = document.createElement('p');
-    label.textContent = 'Enter the page to search';
+    
   
     // Create input
     const input = document.createElement('input');
@@ -30,7 +28,7 @@ export default function decorate(block) {
         });
   
         if (match) {
-          const baseUrl = 'https://main--firsteds--akashselvins.aem.page';
+          const baseUrl = 'https://main--firsteds--akashselvins.aem.live';
           window.location.href = `${baseUrl}${match.path}`;
         } else {
           alert('No matching page found.');
