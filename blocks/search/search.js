@@ -1,5 +1,7 @@
 export default function decorate(block) {
-    
+    // Create label
+    const label = document.createElement('p');
+    label.textContent = 'Enter the page to search';
   
     // Create input
     const input = document.createElement('input');
