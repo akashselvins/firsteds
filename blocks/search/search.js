@@ -17,7 +17,7 @@ export default function decorate(block) {
       if (!query) return;
 
       try {
-        const res = await fetch('https://main--firsteds--akashselvins.aem.page/query-index.json');
+        const res = await fetch('https://main--firsteds--akashselvins.aem.live/query-index.json');
         const json = await res.json();
         const pages = json.data;
 
