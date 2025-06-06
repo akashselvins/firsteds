@@ -1,34 +1,32 @@
 export default function decorate(block) {
-    // Create label
-    const label = document.createElement('p');
-    label.textContent = 'Enter the page to search';
-  
-    // Create input
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.id = 'searchInput';
-    input.placeholder = 'Enter title or tag';
-  
-    // Create button
-    const button = document.createElement('button');
-    button.textContent = 'Search';
-  
-    // Add event listener to button
-    button.addEventListener('click', async () => {
+  // Create a wrapper div for styling
+  const wrapper = document.createElement('div');
+  wrapper.className = 'search-wrapper';
+
+  // Create input with new class
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.id = 'searchInput';
+  input.placeholder = 'Search by title or tag';
+  input.className = 'input'; // Apply the styled input class
+
+  // Add event listener for Enter key
+  input.addEventListener('keydown', async (event) => {
+    if (event.key === 'Enter') {
       const query = input.value.toLowerCase();
       if (!query) return;
-  
+
       try {
-        const res = await fetch('https://main--firsteds--akashselvins.aem.live/query-index.json');
+        const res = await fetch('https://main--firsteds--akashselvins.aem.page/query-index.json');
         const json = await res.json();
         const pages = json.data;
-  
+
         const match = pages.find(page => {
           const titleMatch = page['og:title']?.toLowerCase().includes(query);
-          const tagMatch = page.tags?.toLowerCase().includes(query);
+          const tagMatch = page['tag']?.toLowerCase().includes(query);
           return titleMatch || tagMatch;
         });
-  
+
         if (match) {
           const baseUrl = 'https://main--firsteds--akashselvins.aem.live';
           window.location.href = `${baseUrl}${match.path}`;
@@ -39,12 +37,13 @@ export default function decorate(block) {
         console.error('Search failed:', err);
         alert('Error searching pages.');
       }
-    });
-  
-    // Append elements to block
-    block.textContent = ''; // Clear existing content
-    block.appendChild(label);
-    block.appendChild(input);
-    block.appendChild(button);
-  }
-  
+    }
+  });
+
+  // Append input to wrapper
+  wrapper.appendChild(input);
+
+  // Clear block and append wrapper
+  block.textContent = '';
+  block.appendChild(wrapper);
+}
