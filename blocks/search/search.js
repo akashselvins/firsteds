@@ -24,7 +24,7 @@ export default function decorate(block) {
         const match = pages.find(page => {
           const titleMatch = page['og:title']?.toLowerCase().includes(query);
           const tagMatch = page['tag']?.toLowerCase().includes(query);
-          return titleMatch || tagMatch;
+          return titleMatch || tagMatch; 
         });
 
         if (match) {
