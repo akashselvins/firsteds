@@ -127,3 +127,41 @@ async function loadPage() {
 }
 
 loadPage();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const main = document.querySelector('main');
+  const sections = [...main.querySelectorAll('.section')];
+
+  let i = 0;
+  while (i < sections.length) {
+    const current = sections[i];
+
+    if (current.classList.contains('left-side')) {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('section-row');
+      main.insertBefore(wrapper, current);
+
+      current.classList.add('left-column');
+      wrapper.appendChild(current);
+      i++;
+
+      const rightWrapper = document.createElement('div');
+      rightWrapper.classList.add('right-column');
+
+      while (i < sections.length && sections[i].classList.contains('right-side')) {
+        rightWrapper.appendChild(sections[i]);
+        i++;
+      }
+
+      wrapper.appendChild(rightWrapper);
+    } else if (current.classList.contains('right-side')) {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('section-standalone-right');
+      main.insertBefore(wrapper, current);
+      wrapper.appendChild(current);
+      i++;
+    } else {
+      i++;
+    }
+  }
+});
